@@ -21,3 +21,15 @@ Account BankService::CreateAccount(int userId)
     nextAccountNumber++;
     return account;
 }
+
+bool BankService::login(int userId, int pin) const
+{
+    for (const User &user : users)
+    {
+        if (user.getUserId() == userId)
+        {
+            return user.verifyPin(pin);
+        }
+    }
+    return false;
+}

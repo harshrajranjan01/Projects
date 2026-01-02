@@ -18,7 +18,12 @@ private:
 
 public:
     BankService();
+
+    // public operation
     User createUser(const std::string &name, int pin);
     Account CreateAccount(int userId);
+
+    // Login
+    bool login(int userId, int pin) const;
 };
 #endif
