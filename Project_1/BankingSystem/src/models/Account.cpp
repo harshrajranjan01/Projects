@@ -3,7 +3,7 @@
 Account::Account(int accountNumber, int userId)
     : accountNumber(accountNumber), userId(userId), balance(0.00) {};
 
-bool Account::deposite(double amount)
+bool Account::deposit(double amount)
 {
     if (amount <= 0)
     {

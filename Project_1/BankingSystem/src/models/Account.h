@@ -11,7 +11,7 @@ private:
 public:
     Account(int accountNumber, int userId);
 
-    bool deposite(double amount);
+    bool deposit(double amount);
 
     bool withdraw(double amount);
 

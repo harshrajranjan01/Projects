@@ -21,7 +21,7 @@ public:
 
     // public operation
     User createUser(const std::string &name, int pin);
-    Account CreateAccount(int userId);
+    Account createAccount(int userId);
 
     Account *getAccountByUserId(int userId);
 
@@ -29,7 +29,7 @@ public:
     bool login(int userId, int pin) const;
 
     //Transaction
-    bool deposite(int userId,double amount);
+    bool deposit(int userId,double amount);
     bool withdraw(int userId,double amount);
 
 

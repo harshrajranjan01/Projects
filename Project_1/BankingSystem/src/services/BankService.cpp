@@ -14,7 +14,7 @@ User BankService::createUser(const std::string &name, int pin)
 }
 
 // Create a new account for a user
-Account BankService::CreateAccount(int userId)
+Account BankService::createAccount(int userId)
 {
     Account account(nextAccountNumber, userId);
     accounts.push_back(account);
@@ -46,7 +46,7 @@ bool BankService::login(int userId, int pin) const
     return false;
 }
 
-bool BankService::deposite(int userId, double amount)
+bool BankService::deposit(int userId, double amount)
 {
     Account *account = nullptr;
 
@@ -64,7 +64,7 @@ bool BankService::deposite(int userId, double amount)
         return false;
     }
 
-    return account->deposite(amount);
+    return account->deposit(amount);
 }
 
 bool BankService::withdraw(int userId, double amount)
