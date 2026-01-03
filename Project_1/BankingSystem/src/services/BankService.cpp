@@ -16,10 +16,22 @@ User BankService::createUser(const std::string &name, int pin)
 // Create a new account for a user
 Account BankService::CreateAccount(int userId)
 {
-    Account account(nextAccountNumber, 0.00);
+    Account account(nextAccountNumber, userId);
     accounts.push_back(account);
     nextAccountNumber++;
     return account;
+}
+
+Account *BankService::getAccountByUserId(int userId)
+{
+    for (Account &account : accounts)
+    {
+        if (account.getUserId() == userId)
+        {
+            return &account;
+        }
+    }
+    return nullptr;
 }
 
 bool BankService::login(int userId, int pin) const

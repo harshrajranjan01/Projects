@@ -1,7 +1,7 @@
 #include "Account.h"
 
-Account::Account(int accountNumber, double balance)
-    : accountNumber(accountNumber), balance(balance) {};
+Account::Account(int accountNumber, int userId)
+    : accountNumber(accountNumber), userId(userId), balance(0.00) {};
 
 bool Account::deposite(double amount)
 {
@@ -31,6 +31,10 @@ double Account::getBalance() const
     return balance;
 }
 
+int Account::getUserId() const
+{
+    return userId;
+}
 int Account::getAccountNumber() const
 {
     return accountNumber;

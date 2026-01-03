@@ -5,18 +5,20 @@ class Account
 {
 private:
     int accountNumber;
+    int userId;
     double balance;
 
 public:
-Account(int accountNumber,double balance);
+    Account(int accountNumber, int userId);
 
-bool deposite(double amount);
+    bool deposite(double amount);
 
-bool withdraw(double amount);
+    bool withdraw(double amount);
 
-double getBalance() const;
+    double getBalance() const;
 
-int getAccountNumber() const;
+    int getUserId() const;
 
+    int getAccountNumber() const;
 };
 #endif

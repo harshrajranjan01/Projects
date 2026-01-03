@@ -23,6 +23,8 @@ public:
     User createUser(const std::string &name, int pin);
     Account CreateAccount(int userId);
 
+    Account *getAccountByUserId(int userId);
+
     // Login
     bool login(int userId, int pin) const;
 };
