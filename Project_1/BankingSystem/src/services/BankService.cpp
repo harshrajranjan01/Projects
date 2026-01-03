@@ -45,3 +45,43 @@ bool BankService::login(int userId, int pin) const
     }
     return false;
 }
+
+bool BankService::deposite(int userId, double amount)
+{
+    Account *account = nullptr;
+
+    for (Account &acc : accounts)
+    {
+        if (acc.getUserId() == userId)
+        {
+            account = &acc;
+        }
+        break;
+    }
+
+    if (account == nullptr)
+    {
+        return false;
+    }
+
+    return account->deposite(amount);
+}
+
+bool BankService::withdraw(int userId, double amount)
+{
+    Account *account = nullptr;
+
+    for (Account &acc : accounts)
+    {
+        if (acc.getUserId() == userId)
+        {
+            account = &acc;
+            break;
+        }
+    }
+    if (account == nullptr)
+    {
+        return false;
+    }
+    return account->withdraw(amount);
+}

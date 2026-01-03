@@ -27,5 +27,11 @@ public:
 
     // Login
     bool login(int userId, int pin) const;
+
+    //Transaction
+    bool deposite(int userId,double amount);
+    bool withdraw(int userId,double amount);
+
+
 };
 #endif
