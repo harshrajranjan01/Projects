@@ -22,25 +22,34 @@ int main()
             std::cin >> choice;
 
             if (choice == 1)
-            {   
+            {
                 std::string name;
                 int pin;
 
-                std::cout<<"Enter Name: \n";
-                std::cin>>name;
+                std::cout << "Enter Name: \n";
+                std::cin >> name;
 
-                std::cout<<"Enter Pin: \n";
-                std::cin>>pin;
+                std::cout << "Enter Pin: \n";
+                std::cin >> pin;
 
-                User user=bank.createUser(name,pin);
+                User user = bank.createUser(name, pin);
 
-                std::cout<<"User Created Sucessfully!\n";
-                std::cout<<"Your User Id is: "<<user.getUserId()<<"\n";
+                std::cout << "User Created Sucessfully!\n";
+                std::cout << "Your User Id is: " << user.getUserId() << "\n";
             }
-           else if (choice == 2)
+            else if (choice == 2)
             {
+                int userId;
+
+                std::cout << "Enter User ID: \n";
+                std::cin >> userId;
+
+                Account acc = bank.createAccount(userId);
+
+                std::cout << "Account created. with account Number: "
+                          << acc.getAccountNumber() << "\n";
             }
-           else if (choice == 3)
+            else if (choice == 3)
             {
             }
             else if (choice == 0)
