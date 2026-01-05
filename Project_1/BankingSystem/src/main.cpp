@@ -51,6 +51,25 @@ int main()
             }
             else if (choice == 3)
             {
+                int userId;
+                int pin;
+
+                std::cout << "Enter User Id: \n";
+                std::cin >> userId;
+
+                std::cout << "Enter PIN: \n";
+                std::cin >> pin;
+
+                if (bank.login(userId, pin))
+                {
+                    currentUserId == userId;
+                    std::cout << "Login sucessfully\n";
+                }
+
+                else
+                {
+                    std::cout << "Invalid User ID or PIN\n";
+                }
             }
             else if (choice == 0)
             {
