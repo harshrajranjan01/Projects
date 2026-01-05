@@ -94,6 +94,17 @@ int main()
 
             if (choice == 1)
             {
+                double amount;
+                std::cout<<"Enter Amount to deposit:\n";
+                std::cin>>amount;
+                if(bank.deposit(currentUserId,amount))
+                {
+                    std::cout<<"Deposit successfully!\n";
+                }
+                else
+                {
+                    std::cout<<"Deposit failed. Invalid amount or account not found!\n";
+                }
             }
 
             else if (choice == 2)
