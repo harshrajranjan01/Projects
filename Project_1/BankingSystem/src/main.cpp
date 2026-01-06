@@ -95,20 +95,32 @@ int main()
             if (choice == 1)
             {
                 double amount;
-                std::cout<<"Enter Amount to deposit:\n";
-                std::cin>>amount;
-                if(bank.deposit(currentUserId,amount))
+                std::cout << "Enter Amount to deposit:\n";
+                std::cin >> amount;
+                if (bank.deposit(currentUserId, amount))
                 {
-                    std::cout<<"Deposit successfully!\n";
+                    std::cout << "Deposit successfully!\n";
                 }
                 else
                 {
-                    std::cout<<"Deposit failed. Invalid amount or account not found!\n";
+                    std::cout << "Deposit failed. Invalid amount or account not found!\n";
                 }
             }
 
             else if (choice == 2)
             {
+                double amount;
+                std::cout << "Enter Amount to Withdraw\n";
+                std::cin >> amount;
+
+                if (bank.withdraw(currentUserId, amount))
+                {
+                    std::cout << "Withdraw Sucessfull\n";
+                }
+                else
+                {
+                    std::cout << "Withdraw failed. Insufficient balance or invalid account\n";
+                }
             }
 
             else if (choice == 3)
